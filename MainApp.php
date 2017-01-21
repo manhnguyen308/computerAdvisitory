@@ -2,10 +2,10 @@
 function __autoload($url) {
 	require ("$url.php");
 }
-// if (isset ( $_GET ['budget'] ) && isset ( $_GET ['mucdich'] )) {
+ if (isset ( $_GET ['budget'] ) && isset ( $_GET ['mucdich'] )) {
 	// get purpose and budget
-	$purpose = 'Game';
-	$budget = 30000000;
+	$purpose = $_GET ['mucdich'];
+	$budget = $_GET ['budget'];
 	$rows;
 	
 	// retrieve data from csv file
@@ -114,5 +114,5 @@ function __autoload($url) {
 // 	json_encode($message, JSON_UNESCAPED_SLASHES);
 // 	json_encode($message, JSON_PRETTY_PRINT);
 	echo json_encode($message);
-// }
+}
 ?>
